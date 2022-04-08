@@ -14,6 +14,13 @@ public class Main {
         curso2.setDescricao("Descrição curso JS");
         curso2.setCargaHoraria(4);
 
+        Curso curso3 = new Curso();
+        curso3.setTitulo("Curso C#");
+        curso3.setDescricao("Descrição curso C#");
+        curso3.setCargaHoraria(6);
+
+
+
         Mentoria mentoria = new Mentoria();
         mentoria.setTitulo("Mentoria de Java");
         mentoria.setDescricao("Descrição mentoria Java");
