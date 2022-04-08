@@ -1,5 +1,4 @@
-import br.com.dio.desafio.dominio.Curso;
-import br.com.dio.desafio.dominio.Mentoria;
+import br.com.dio.desafio.dominio.*;
 
 import java.time.LocalDate;
 
@@ -20,8 +19,45 @@ public class Main {
         mentoria.setDescricao("Descrição mentoria Java");
         mentoria.setData(LocalDate.now());
 
-        System.out.println(curso1);
+
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp Java Developer");
+        bootcamp.setDescricao("Descrição Bootcamp Java Developer");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria);
+
+        Dev devAdam = new Dev();
+        devAdam.setNome("Adam");
+        devAdam.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos Inscritos Adam: " + devAdam.getConteudosInscritos());
+        devAdam.progredir();
+        devAdam.progredir();
+        System.out.println("-");
+        System.out.println("Conteúdos Inscritos Adam: " + devAdam.getConteudosInscritos());
+        System.out.println("Conteúdos Concluidos Adam: " + devAdam.getConteudosConcluidos());
+        System.out.println("XP: " + devAdam.calcularTotalXp());
+
+
+        System.out.println("----------------------------");
+
+
+        Dev devMariana = new Dev();
+        devMariana.setNome("Mariana");
+        devMariana.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos Inscritos Mariana: " + devMariana.getConteudosInscritos());
+        devMariana.progredir();
+        devMariana.progredir();
+        devMariana.progredir();
+        System.out.println("-");
+        System.out.println("Conteúdos Inscritos Mariana: " + devMariana.getConteudosInscritos());
+        System.out.println("Conteúdos Comcluidos Mariana: " + devMariana.getConteudosConcluidos());
+        System.out.println("XP: " + devMariana.calcularTotalXp());
+
+
+        /*System.out.println(curso1);
         System.out.println(curso2);
-        System.out.println(mentoria);
+        System.out.println(mentoria);*/
+
     }
 }
